@@ -48,6 +48,11 @@ ol {
   list-style: none;
 }
 
+:global {
+  .ant-popover .ant-popover-title {
+    color: @primary-text-color;
+  }
+}
 .priamryText {
   display: inline-block;
   margin-top: 5px;
@@ -55,10 +60,4 @@ ol {
   color: #b6bfc5;
   font-size: 18px;
   text-align: center;
-}
-
-:global {
-  .ant-popover .ant-popover-title {
-    color: @primary-text-color;
-  }
 }
