@@ -10,7 +10,7 @@ cache:
   paths:
     - node_modules/
     - static/
-    - dist.tart
+    - dist.tar
 
 before_script:
   - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y ) '
@@ -45,7 +45,7 @@ zip:
   only:
     - master
   script:
-    - tar -czvf dist.tart ./static
+    - tar -czvf dist.tar ./static
 
 deploy:
   stage: deploy
@@ -54,5 +54,5 @@ deploy:
   only:
     - master
   script:
-    - scp ./dist.tart root@$DEPLOY_SERVER_DEV:/data/frontEnd
-    - ssh root@$DEPLOY_SERVER_DEV "cd /data/www/lighttpd/<>%%=admin_name/public && rm -rf ./static/* && tar zxvf /data/frontEnd/dist.tart -C /data/www/lighttpd/caiwu/public && \cp ./static/index.html ../resources/views/welcome.blade.php"
+    - scp ./dist.tar root@$DEPLOY_SERVER_DEV:/data/frontEnd
+    - ssh root@$DEPLOY_SERVER_DEV "cd /data/www/lighttpd/<%=admin_name%>/public && rm -rf ./static/* && tar zxvf /data/frontEnd/dist.tar -C /data/www/lighttpd/<%=admin_name%>/public && \cp ./static/index.html ../resources/views/welcome.blade.php"
