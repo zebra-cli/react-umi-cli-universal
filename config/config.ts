@@ -106,55 +106,6 @@ export default {
                   ]
                 },
                 {
-                  path: '/base/down',
-                  name: 'down',
-                  component: './base/down',
-                  routes: [
-                    {
-                      name: 'list',
-                      path: '/base/down/list',
-                      hideInMenu: true,
-                      component: './base/down/list'
-                    },
-                    {
-                      name: 'part',
-                      path: '/base/down/part',
-                      hideInMenu: true,
-                      component: './base/down/part'
-                    },
-                    {
-                      component: './exception/404'
-                    }
-                  ]
-                },
-                {
-                  path: '/base/process',
-                  name: 'process',
-                  component: './base/process',
-                  routes: [
-                    {
-                      name: 'upload',
-                      path: '/base/process/upload',
-                      hideInMenu: true,
-                      component: './base/process/upload'
-                    },
-                    {
-                      name: 'check',
-                      path: '/base/process/check',
-                      hideInMenu: true,
-                      component: './base/process/check'
-                    },
-                    {
-                      component: './exception/404'
-                    }
-                  ]
-                },
-                {
-                  name: 'log',
-                  path: '/base/log',
-                  component: './base/log'
-                },
-                {
                   component: './exception/404'
                 }
               ]

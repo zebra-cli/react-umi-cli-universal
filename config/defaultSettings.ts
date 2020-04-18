@@ -55,7 +55,7 @@ export default {
   menu: {
     locale: true
   },
-  title: '卓思财务报告平台',
+  title: 'title',
   pwa: false,
   iconfontUrl: '//at.alicdn.com/t/font_1680671_ghvcvdng2f.js',
   collapse: true,
