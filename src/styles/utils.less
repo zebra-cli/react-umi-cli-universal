@@ -1,0 +1,90 @@
+@attrs: a, t, r, b, l;
+@suffix: '', -top, -right, -bottom, -left;
+
+@attrsLen: length(@attrs);
+@range: 4;
+
+.loop(@index, @name, @sign, @start: 1, @end: 12) when (@start <=@end) {
+  @value: (@start * @range);
+  @suff: extract(@suffix, @index);
+
+  .mixin (@suff) when not (@suff ='') {
+    .@{name}@{sign}-@{start} {
+      @{attr}@{suff}: (@value * 1px) !important;
+    }
+  }
+
+  .mixin (@suff) when (@suff ='') {
+    .@{name}@{sign}-@{start} {
+      @{attr}: (@value * 1px) !important;
+    }
+  }
+
+  .mixin(@suff);
+  .loop(@index, @name, @sign, (@start + 1), @end);
+}
+
+.distance(@name, @attr) {
+  .loog(@index) when (@index<=@attrsLen) {
+    @sign: extract(@attrs, @index);
+
+    .mixin (@sign) when(@sign =a) {
+      .loop(@index, @name, @sign);
+    }
+
+    .mixin (@sign) when(@sign =t) {
+      .loop(@index, @name, @sign);
+    }
+
+    .mixin (@sign) when(@sign =r) {
+      .loop(@index, @name, @sign);
+    }
+
+    .mixin (@sign) when(@sign =b) {
+      .loop(@index, @name, @sign);
+    }
+
+    .mixin (@sign) when(@sign =l) {
+      .loop(@index, @name, @sign);
+    }
+
+    .mixin(@sign);
+    .loog(@index+1);
+  }
+
+  .loog(0);
+}
+
+.distance(m, margin);
+.distance(p, padding);
+
+.single-distance(@name, @attr, @start: 5, @end: 22, @r: 10) {
+  .loop(@i, @e) when (@i <=@e) {
+    .loop((@i + 1), @e);
+    @value: (@i * @r);
+
+    .@{name}-@{i} {
+      @{attr}: (@value * 1px) !important;
+    }
+  }
+
+  .loop(@start, @end);
+}
+
+.single-distance(w, width);
+
+.pull-right {
+  float: right !important;
+}
+
+.pull-left {
+  float: left !important;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.has-pointer {
+  cursor: pointer;
+}

@@ -1,0 +1,64 @@
+@import '~styles/utils.less';
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+input:-internal-autofill-selected,
+input:-webkit-autofill {
+  background-color: #fff;
+  background-image: none;
+  -webkit-box-shadow: 0 0 0 1000px #fff inset;
+  box-shadow: 0 0 0 1000px #fff inset;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:hover {
+  -webkit-box-shadow: 0 0 0 60px transparent inset;
+  box-shadow: inset 0 0 0 60px transparent;
+  -webkit-text-fill-color: #353b3e;
+  -webkit-transition: background-color 5000s ease-in-out 0s;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+input[type='password'] {
+  font-family: 'PingFang SC', 'Microsoft YaHei', 'Avenir', Helvetica, Arial,
+    sans-serif !important;
+}
+
+.colorWeak {
+  filter: invert(80%);
+}
+
+canvas {
+  display: block;
+}
+
+body {
+  font-family: 'PingFang SC', 'Microsoft YaHei', 'Avenir', Helvetica, Arial,
+    sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+.priamryText {
+  display: inline-block;
+  margin-top: 5px;
+  padding: 2px 4px;
+  color: #b6bfc5;
+  font-size: 18px;
+  text-align: center;
+}
+
+:global {
+  .ant-popover .ant-popover-title {
+    color: @primary-text-color;
+  }
+}

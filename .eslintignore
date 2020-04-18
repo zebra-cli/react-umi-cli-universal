@@ -1,0 +1,9 @@
+/lambda/
+/scripts
+/config
+.history
+/src/styles/icons/
+/static/
+.stylelintrc.js
+.prettierrc.js
+.config/config.ts

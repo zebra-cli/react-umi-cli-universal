@@ -1,0 +1,58 @@
+image: node
+
+stages:
+  - install
+  - build
+  - zip
+  - deploy
+
+cache:
+  paths:
+    - node_modules/
+    - static/
+    - dist.tart
+
+before_script:
+  - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y ) '
+  - eval $(ssh-agent -s)
+  - ssh-add <(echo "$SSH_PRIVATE_KEY_DEV")
+  - mkdir -p ~/.ssh
+  - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config '
+
+install:
+  stage: install
+  tags:
+    - tagtym
+  only:
+    - master
+  script:
+    - npm install -g cnpm --registry=https://registry.npm.taobao.org
+    - cnpm install
+
+build:
+  stage: build
+  tags:
+    - tagtym
+  only:
+    - master
+  script:
+    - npm run build
+
+zip:
+  stage: zip
+  tags:
+    - tagtym
+  only:
+    - master
+  script:
+    - tar -czvf dist.tart ./static
+
+deploy:
+  stage: deploy
+  tags:
+    - tagtym
+  only:
+    - master
+  script:
+    - scp ./dist.tart root@$DEPLOY_SERVER_DEV:/data/frontEnd
+    - ssh root@$DEPLOY_SERVER_DEV "cd /data/www/lighttpd/<>%%=admin_name/public && rm -rf ./static/* && tar zxvf /data/frontEnd/dist.tart -C /data/www/lighttpd/caiwu/public && \cp ./static/index.html ../resources/views/welcome.blade.php"

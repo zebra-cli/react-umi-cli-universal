@@ -1,0 +1,194 @@
+@import '~styles/form.less';
+@import '~styles/button.less';
+@import '~styles/modal.less';
+
+.proLayout {
+  .globalMenuSub {
+    margin-top: 12px;
+    padding-top: 1px;
+    font-size: 20px;
+    text-align: left;
+    -ms-transform: scale(0.5);
+    -webkit-transform: scale(0.5);
+    -moz-transform: scale(0.5);
+    -o-transform: scale(0.5);
+    transform: scale(0.5);
+    -ms-transform-origin: 0 0;
+    -webkit-transform-origin: 0 0;
+    -moz-transform-origin: 0 0;
+    -o-transform-origin: 0 0;
+    transform-origin: 0 0;
+  }
+  .globalMenu {
+    height: 14px;
+    text-align: left;
+  }
+  .globalFooter {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #b6bfc5;
+    font-size: 12px;
+    text-align: center;
+  }
+  :global {
+    .ant-pro-sider-menu-sider .ant-menu-item-selected .anticon svg,
+    .ant-pro-sider-menu-sider .ant-menu-submenu-selected .anticon svg {
+      color: @primary-color;
+    }
+    .ant-pro-sider-menu-sider .anticon svg {
+      color: #b6bfc5;
+    }
+    .ant-menu-inline > .ant-menu-submenu > .ant-menu-submenu-title {
+      height: 48px;
+      line-height: 48px;
+    }
+    .ant-menu-sub.ant-menu-inline > .ant-menu-item,
+    .ant-menu-sub.ant-menu-inline
+      > .ant-menu-submenu
+      > .ant-menu-submenu-title {
+      height: 22px;
+      padding-left: 56px !important;
+      line-height: 22px;
+    }
+    .ant-menu-submenu .ant-menu-sub {
+      .ant-menu-item,
+      .ant-menu-item-selected {
+        font-size: 13px;
+        background: transparent;
+      }
+    }
+    .ant-pro-sider-menu-sider.light .ant-pro-sider-menu-logo h1 {
+      margin: 0 0 0 6px;
+      color: #001e50;
+    }
+    .ant-pro-sider-menu-logo img {
+      position: absolute;
+      top: 12px;
+      left: 50%;
+      display: inline-block;
+      margin-left: -61px;
+      // vertical-align: middle;
+    }
+    .ant-pro-sider-menu-logo h1 {
+      position: absolute;
+      bottom: 8px;
+      width: 100%;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 0;
+    }
+    .ant-layout-footer {
+      background: transparent;
+    }
+    .ant-pro-global-footer-copyright {
+      color: #fff;
+      font-size: 12px;
+      opacity: 0.5;
+    }
+    .ant-layout-header:not(.ant-pro-top-menu) {
+      padding: 24px;
+      background: #f0f2f5 !important;
+    }
+    .ant-menu-horizontal {
+      padding: 8px 24px 0 24px;
+      font-size: 10px;
+      line-height: 20px;
+      background: transparent;
+      border: none;
+    }
+    .ant-menu-horizontal > .ant-menu-item,
+    .ant-menu-horizontal > .ant-menu-submenu {
+      height: 40px;
+      margin-right: 43px;
+      padding: 0 5px;
+      font-size: 16px;
+      line-height: 40px;
+    }
+    .ant-menu-horizontal > .ant-menu-item-hover,
+    .ant-menu-horizontal > .ant-menu-item-active,
+    .ant-menu-horizontal > .ant-menu-item-selected {
+      border-bottom: 3px solid @primary-color;
+    }
+
+    .ant-tabs-nav .ant-tabs-tab {
+      margin-right: 22px;
+      padding: 0 0 12px 0;
+      color: @primary-heavy-color;
+      font-weight: normal;
+    }
+
+    .ant-tabs-nav .ant-tabs-tab-active {
+      color: @primary-color;
+    }
+
+    .ant-layout {
+      min-height: 100vh;
+    }
+    .ant-card-body {
+      padding: 20px 0 0 0;
+    }
+
+    .ant-pro-global-header {
+      background: #f0f2f5;
+      box-shadow: none;
+    }
+
+    .ant-pro-global-header-trigger:hover {
+      background: #f0f2f5;
+    }
+
+    .ant-select-selection--single {
+      height: 28px;
+      border: 1px solid #ddd;
+    }
+
+    .antd-pro-layouts-basic-layout-proLayout {
+      margin: 0 24px 24px;
+    }
+
+    .ant-badge-multiple-words {
+      padding: 0 4px;
+    }
+    .ant-badge-count {
+      min-width: 14px;
+      height: 16px;
+      line-height: 18px;
+    }
+
+    .ant-list-split .ant-list-item {
+      padding: 0 0 8px 0;
+      border: none;
+    }
+    .ant-menu-item,
+    .ant-menu-submenu-title {
+      color: @primary-heavy-color;
+      background-color: transparent !important;
+      a {
+        color: @primary-heavy-color;
+        background-color: transparent !important;
+      }
+    }
+    .ant-menu-submenu-selected {
+      .ant-menu-item,
+      .ant-menu-submenu-title {
+        color: @primary-color;
+        background-color: transparent !important;
+      }
+    }
+    .ant-menu-item-selected {
+      color: @primary-color;
+      background-color: transparent;
+      a {
+        color: @primary-color;
+      }
+    }
+    .ant-menu-inline .ant-menu-item::after {
+      border-right: transparent;
+    }
+  }
+}
+
+.point {
+  display: inline-block;
+  margin: 0 4px 0 8px;
+}
